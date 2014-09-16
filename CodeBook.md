@@ -7,15 +7,15 @@ output: html_document
 In the run_analysis.R script, the following objects are computed/made.
 
 * data : this is a data.frame consisting of 10299 rows and 561 columns. It merges the training and test sets. More precisely, it is build up as follows.
-  *The first 7352 rows of data corresponds to the training set. It is build up as follows.
-    *The first 561 columns are taken from X_train.txt.
-    *The column 562 contains the subject numbers (taken from subject_train.txt)
-    *The last column 563 contains the activity numbers (taken from y_train.txt)
-  *The last 2947 rows of data corresponds to the test set. It is build up as follows.
-    *The first 561 columns are taken from X_test.txt.
-    *The column 562 contains the subject numbers (taken from subject_test.txt)
-    *The last column 563 contains the activity numbers (taken from y_test.txt)
-  *The variable names for the first 561 columns are taken from features.txt; the last two variable names are "Subject"       and "Activity".
+  * The first 7352 rows of data corresponds to the training set. It is build up as follows.
+    * The first 561 columns are taken from X_train.txt.
+    * The column 562 contains the subject numbers (taken from subject_train.txt)
+    * The last column 563 contains the activity numbers (taken from y_train.txt)
+  * The last 2947 rows of data corresponds to the test set. It is build up as follows.
+    * The first 561 columns are taken from X_test.txt.
+    * The column 562 contains the subject numbers (taken from subject_test.txt)
+    * The last column 563 contains the activity numbers (taken from y_test.txt)
+  * The variable names for the first 561 columns are taken from features.txt; the last two variable names are "Subject"       and "Activity".
   * Overview of the transformations done to compute data: download the zip-file projectData.zip in working directory, read the tables from the needed txt-files, merge the tables together with rbind/cbind, add variable names
 
 * subdata : this is a data.frame consisting of 10299 rows and 81 columns. This is a subframe of data, consisting of all the variables that contain info about the mean and std (and meanFreq), plus the subject numbers and activity labels.
@@ -28,4 +28,4 @@ In the run_analysis.R script, the following objects are computed/made.
   * The first row with variable name "Subject" corresponds to the subject number.
   * The second row with variable name "Activity" corresponds to the activity label (e.g. WALKING).
   * The rows 3 to 81 contain the means of the variables related to mean and std. 
-  * Overview of the transformations done to compute AverageData: using the package plyr and the ddply command, take the means of the columns, for each combination of activity and subject.
+  * Overview of the transformations done to compute averagedata: using the package plyr and the ddply command, take the means of the columns, for each combination of activity and subject.
